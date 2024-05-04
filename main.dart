@@ -1,48 +1,64 @@
-import 'dart:io';
+// import 'dart:io';
 
-main() {
-//Q2
-// var abc = [0,2,4,6,3,10,11,99,20];
-// abc.sort();
-// print(abc);
-// var largestNumber = abc.last;
-// print(largestNumber);
+// void main() {
+//   stdout.write("Enter a number: ");
+//   int number = int.parse(stdin.readLineSync()!);
 
-//Q3
-// var table = 5;;
-// for(var i = 1; i<=10;i++){
-//   print('$table x $i = ${i*table}');
+//   int count = 0;
+//   int temp = number.abs();
+//   while (temp != 0) {
+//     count++;
+//     temp ~/= 10;
+//   }
+
+//   print("Number of digits: $count");
+
+// Q2
+int length = 8;
+//   print("Generated password: ${generatePassword(length)}");
+
+// String generatePassword(int length) {
+//   const String validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_+";
+//   Random random = Random();
+//   String password = "";
+
+//   int i = 0;
+//   while (i < length) {
+//     int index = random.nextInt(validChars.length);
+//     password += validChars[index];
+//     i++;
+//   }
+
+//   return password;
 // }
 
-//Q4
-  // stdout.write("write a word :");
-  // var word = stdin.readLineSync();
-  // var flag = false;
-  // if(word != null){
-  //     var check = word.split('').reversed.join();
-  //     if(check == word){
-  //       flag = true;
-  //     }
+// Q3
+//   stdout.write("Enter a number: ");
+//   int number = int.parse(stdin.readLineSync()!);
 
-  //     if(flag){
-  //       print("It is a Palindrome");
-  //     }
-  //     else{
-  //       print("It is not a Palindrome");
-  //     }
-  // }
+//   print("Multiplication table of $number:");
+//   int i = 1;
+//   while (i <= 10) {
+//     print("$number x $i = ${number * i}");
+//     i++;
+//   }
 
-  //Q5
-  // var user = 5;
-  // for(var i = 1; i<= user; i++){
-  //    print('${i.toString()*i}');
-  // }
+// Q5
+// stdout.write("Enter a number: ");
+//   double number = double.parse(stdin.readLineSync()!);
 
-// Q6
-  int i = 1;
-  for (var i = 1; i <= 10; i++) {
-    if (i > 5) {
-      print(i);
-    }
-  }
-}
+//   if (number > 0) {
+//     print("$number is positive.");
+//   } else if (number < 0) {
+//     print("$number is negative.");
+//   } else {
+//     print("$number is zero.");
+//   }
+
+// Q12
+// int num = 2;
+
+//   do {
+//     print(num);
+//     num += 2;
+//   } while (num <= 20);
