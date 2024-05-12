@@ -1,64 +1,77 @@
-// import 'dart:io';
+import 'dart:math';
+import 'dart:io';
 
-// void main() {
-//   stdout.write("Enter a number: ");
-//   int number = int.parse(stdin.readLineSync()!);
+void main() {
+  print(calculatorfun());
+}
 
-//   int count = 0;
-//   int temp = number.abs();
-//   while (temp != 0) {
-//     count++;
-//     temp ~/= 10;
-//   }
+calculatorfun() {
+  print("Welcome to Scientific Calculator");
 
-//   print("Number of digits: $count");
+  while (true) {
+    print(
+        "Enter an operation (+, -, *, /, sin, cos, tan) or type 'exit' to quit:");
+    String operation = stdin.readLineSync()!;
 
-// Q2
-int length = 8;
-//   print("Generated password: ${generatePassword(length)}");
+    if (operation == "exit") {
+      print("byekids!");
+      break;
+    }
 
-// String generatePassword(int length) {
-//   const String validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_+";
-//   Random random = Random();
-//   String password = "";
+    if (operation == "sin" || operation == "cos" || operation == "tan") {
+      print("Enter value:");
+      double value = double.parse(stdin.readLineSync()!);
+      double result;
 
-//   int i = 0;
-//   while (i < length) {
-//     int index = random.nextInt(validChars.length);
-//     password += validChars[index];
-//     i++;
-//   }
+      switch (operation) {
+        case "sin":
+          result = sin(value);
+          break;
+        case "cos":
+          result = cos(value);
+          break;
+        case "tan":
+          result = tan(value);
+          break;
+        default:
+          print("Invalid operation.");
+          continue;
+      }
 
-//   return password;
-// }
+      print("Result: $result");
+    } else if (operation == "+" ||
+        operation == "-" ||
+        operation == "*" ||
+        operation == "/") {
+      print("Enter num1:");
+      double num1 = double.parse(stdin.readLineSync()!);
+      print("Enter num2:");
+      double num2 = double.parse(stdin.readLineSync()!);
+      double result;
 
-// Q3
-//   stdout.write("Enter a number: ");
-//   int number = int.parse(stdin.readLineSync()!);
+      switch (operation) {
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-":
+          result = num1 - num2;
+          break;
+        case "*":
+          result = num1 * num2;
+          break;
+        case "/":
+          if (num2 != 0) {
+            result = num1 / num2;
+          } else {
+            print("Error: Division by zero");
+            continue;
+          }
+          break;
+      }
 
-//   print("Multiplication table of $number:");
-//   int i = 1;
-//   while (i <= 10) {
-//     print("$number x $i = ${number * i}");
-//     i++;
-//   }
-
-// Q5
-// stdout.write("Enter a number: ");
-//   double number = double.parse(stdin.readLineSync()!);
-
-//   if (number > 0) {
-//     print("$number is positive.");
-//   } else if (number < 0) {
-//     print("$number is negative.");
-//   } else {
-//     print("$number is zero.");
-//   }
-
-// Q12
-// int num = 2;
-
-//   do {
-//     print(num);
-//     num += 2;
-//   } while (num <= 20);
+      print("result");
+    } else {
+      print("Invalid operation.");
+    }
+  }
+}
